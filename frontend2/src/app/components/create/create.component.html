@@ -1,0 +1,28 @@
+<div>
+    <br>
+    <mat-card>
+      <section class="mat-typography">
+        <h3>Create A New Product</h3>
+      </section>
+      <mat-divider></mat-divider>
+      <br>
+      <form [formGroup]="createForm" class="create-form" #registerForm="ngForm">
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder="ProductId" formControlName="ProductId" #ProductId>
+          <!--<mat-error *ngIf="createForm.controls['title'].errors.required">
+            Title is <strong>required</strong>
+          </mat-error>-->
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder="title" formControlName="title" #title>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <textarea matInput placeholder="description" formControlName="description" #description></textarea>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <br><br>
+        <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;
+        <button type="submit" (click)="addIssue(ProductId.value, title.value, description.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
+      </form>
+    </mat-card>
+  </div>
