@@ -46,6 +46,7 @@ export class EditComponent implements OnInit {
       this.snackBar.open('Product updated successfully', 'OK', {
         duration: 3000
       });
+      this.router.navigate(['/list']);
     });
   }
 
